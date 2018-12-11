@@ -16,5 +16,47 @@ namespace Forces2
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double Angle = double.Parse(textBox2.Text);
+                double Force = double.Parse(textBox1.Text);
+                double ans = Force * Cos(Angle);
+                double ans2 = Force * sin(Angle);
+                label5.Text = ans2.ToString();
+                label4.Text = ans.ToString();
+            }
+
+            catch
+            {
+                MessageBox.Show("Enter an integer please.");
+            }
+        }
+
+
+        double sin(double Angle)
+        {
+            double rad = Angle * Math.PI/ 180.0 ;
+            return Math.Sin(rad);
+        }
+
+
+        double Cos(double Angle)
+        {
+            double rad = Angle * Math.PI / 180.0;
+            return Math.Cos(rad);
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }
